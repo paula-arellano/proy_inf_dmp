@@ -6,11 +6,17 @@ struct perfil {
 };
 
 void main() {
-	struct perfil id;  //Estructura para almacenar el usuario y contraseña ingresados.
+	
+	
+	logotipo();
+	
+
+	
+	struct perfil id;  //Estructura para almacenar el usuario y contraseÃ±a ingresados.
 	int opcion;
 
 
-	printf(" Escoja una de las siguientes opciones para identificarse: \n");
+	printf("\n\n Escoja una de las siguientes opciones para identificarse: \n\n");
 	printf("   1. Paciente\n   2. Equipo medico\n   3. Personal de servicios\n   4. Administracion\n   5. Salir\n\n");
 	scanf_s("%d", &opcion);
 
@@ -73,5 +79,33 @@ void main() {
 	}
 
 	system("PAUSE");
+
+}
+
+
+int logotipo(){
+
+
+printf("   _										\n");
+printf("   d8b   ,.										\n");
+printf("   d8b   88[    __           ______                  _oo       _	\n");
+printf("   d8b   88b   d888b   ,ooL d8888888. ,8b d888888888o888b     88P\n");
+printf("   Y8booo88b  d8P Y88.,88P' 888b  `88.]88  'Y8b''''d8P d8b    88[\n");
+printf("   `88PPP888[ d8b  88[Y8b_  8888od888']88    88[  d88__i88.   Y8b\n");
+printf("    d8b   88[ d8b  88[ Y888LY888P ''  ]88    d8b  d8888888b   d8b\n");
+printf("    ]88   Y8b Y88_d88'   ]88b888b     ]88    Y8b  d8b   `88.  Y8b\n");
+printf("    `8P   Y8P  Y888P  dd8888PY888      88[    88' `88o   Y8b   88booo.\n");
+printf("                     ` ''    YPP      Y8P     '   ` '    `'   `PPPPPP\n");
+printf(" \n");
+printf(" \n");
+printf(" \n");
+printf(" \n");
+																																																																				printf(" \n");
+
+	system("pause");
+	
+	system("cls");
+
+return 0;
 
 }

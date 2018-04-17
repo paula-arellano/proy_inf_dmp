@@ -1,34 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 
 struct perfil {
 	char usuario[50];
 	char contrasena[50];
 };
 
+
+struct perfil id;
+
 void main() {
 
-	struct perfil id;
 
 	char usuario[50];
 	char contrasena[50];
 	
 
 	printf("     Usuario: ");
-	gets(usuario);
+	gets(id.usuario);
 	printf("\n     Contrasena: ");
-	gets(contrasena);
+	gets(id.contrasena);
 
-	while (comprobarusuario(usuario, contrasena) == 1) {
+	while (comprobarusuario(id.usuario, id.contrasena) == 1) {
 		printf("     Usuario: ");
-		gets(usuario);
+		gets(id.usuario);
 		printf("\n     Contrasena: ");
-		gets(contrasena);
+		gets(id.contrasena);
 	}
 
-	
-
-		strcpy(id.usuario, usuario);
-		strcpy(id.contrasena, contrasena);
 
 		printf("Ha iniciado sesion como %s\n\n", id.usuario);
 
@@ -47,7 +46,7 @@ int comprobarusuario(char usuario[50],char contrasena[50]) {
 	
 		
 
-		if (strncmp(usuario, "Miguel") == 0 && strncmp(contrasena, "1234")==0) {
+		if (strncmp(usuario, "Miguel",50) == 0 && strncmp(contrasena,"1234",50)==0) {
 
 			printf("\nUsuario correcto\n\n");
 

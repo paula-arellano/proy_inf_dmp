@@ -11,7 +11,7 @@ void main() {
 	system("pause");
 }
 
-int fecha() {
+char fecha() {
 	time_t result = time(NULL);
 	char time[26], dia;
 	ctime_s(time, sizeof time, &result);

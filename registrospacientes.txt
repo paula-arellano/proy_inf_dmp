@@ -1,0 +1,17 @@
+El paciente 48133057-G ha entrado en el hospital   Thu May  3 16:28:52 2018
+
+El paciente 48157057-K ha entrado en el hospital   Thu May  3 16:28:57 2018
+
+El paciente 68183997-L ha entrado en el hospital   Thu May  3 16:28:58 2018
+
+El paciente 48153017-G ha entrado en el hospital   Thu May  3 16:29:52 2018
+
+El paciente 44563057-O ha entrado en el hospital   Thu May  3 16:30:52 2018
+
+El paciente 48153057-I ha entrado en el hospital   Thu May  3 16:36:25 2018
+
+El paciente 48153057-G ha entrado en el hospital   Thu May  3 16:37:58 2018
+
+El paciente 48156057-Z ha entrado en el hospital   Thu May  3 16:38:41 2018
+
+El paciente 48153057-G ha entrado en el hospital   Thu May  3 16:40:24 2018

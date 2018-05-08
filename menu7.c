@@ -18,13 +18,12 @@ void registrarusuario(char usuario[100]);
 void verregistrosusuarios();
 
 void main() {
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int opcion;
 	int dolor;
 	char sino;
-	
-	
 
+	
 	AltEnter();
 
 	logo();
@@ -32,8 +31,7 @@ void main() {
 
 	system("PAUSE");
 	system("cls");
-	system("color 0F");
-	inicio:
+	system("color 0F");	inicio:
 	printf(" \n\n");
 	printf(" \n\n");
 	time_t result = time(NULL); //imprime la hora
@@ -45,36 +43,33 @@ void main() {
 	printf("Pulsa Alt+Enter o F11 en cualquier momento para salir de la pantalla completa");
 	printf(" \n\n");
 	printf(" \n\n");
-	printf(" \tEscoja una de las siguientes opciones para identificarse: \n");
-	printf(" \n\n");
+	printf(" \tEscoja una de las siguientes opciones para identificarse: \n");	printf(" \n\n");
 	printf(" \t  1. Paciente\n\t  2. Equipo medico\n\t  3. Personal de servicios\n \t  4. Administracion\n \t  5. Salir\n\n");
 	scanf_s("%d", &opcion);
 
-	switch (opcion) {
-	case 1:printf("  Se ha identificado como PACIENTE\n");
+	switch (opcion) {	case 1:printf("  Se ha identificado como PACIENTE\n");
 		registrarpaciente();
 
 		printf("Escoja una de las siguientes especialidades:\n");
-		printf("   1. Medico de familia\n   2. AlergologÌa\n   3. CardiologÌa\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Urgencias\n ");
+		printf("   1. Medico de familia\n   2. Alergolog√≠a\n   3. Cardiolog√≠a\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Urgencias\n ");
 		scanf_s("%d", &opcion);
 
 		switch (opcion)
 		{
 		
-
 		case 15: printf("  Bienvenido al servicio de urgencias\n");
 
-		printf("\n  Le vamos a hacer un cuestionario para ver su estado, conteste con un numero del 1-10 o preguntas con S(sÌ) o N(no)\n\n");
+		printf("\n  Responda el siguiente cuestionario con un numero del 1-10 o S(s√≠) - N(no)\n\n");
 
 		
 
-		printf("\n  Clasifique el estado de su dolor 1-10:   ");
+		printf("\n  Clasifique su nivel de su dolor 1-10:   ");
 
 		scanf_s("%d", &dolor);
 
 		if (dolor >= 6&& dolor<=10) {
 
-			printf(" \n  Cree que sufre problemas respiratorios o cardiacos S-N:  ");
+			printf(" \n  Sufre problemas respiratorios o cardiacos? S-N:  ")
 			fflush(stdin);
 
 			getchar();
@@ -82,7 +77,7 @@ void main() {
 			
 			if (sino == 'S') { dolor = dolor + 4; }
 			
-			printf(" \n\n  Cree que corre un riesgo vital S-N:  ");
+			printf(" \n\n  Indique si alguna vez ha sufrido los  mismo sintomas S-N:  ");
 
 			fflush(stdin);
 			getchar();
@@ -93,20 +88,20 @@ void main() {
 
 		else if (dolor < 6&& dolor>=0) {
 
-			printf(" \n\n  Le duele la cabeza S-N:  ");
-			fflush(stdin);
+			printf(" \n\n  Dolor de cabeza S-N:  ");
+			fflush(stdin)
 			getchar();
 			scanf_s("%c", &sino);
 
 			if (sino == 'S') { dolor = dolor + 1; }
 
-			printf(" \n\n  Sufre vomitos S-N:  ");
+			printf(" \n\n  Vomitos S-N:  ");
 			fflush(stdin);
 			getchar();
 			scanf_s("%c", &sino);
 			if (sino == 'S') { dolor = dolor + 1; }
 
-			printf(" \n\n  Tiene algun dolor fisico S-N:  ");
+			printf(" \n\n  Otro dolor fisico S-N:  ")
 			fflush(stdin);
 			getchar();
 			scanf_s("%c", &sino);
@@ -115,13 +110,13 @@ void main() {
 
 		else { printf("\n\n  Ese numero no esta permitido en la escala\n\n"); system("EXIT"); }
 		
-		printf("  Su clasificacion de dolor es:  %d\n\n", dolor);
+		printf("  Su clasificacion de dolor es:  %d\n\n", dolor)
 		if(dolor==18){ printf("Sera atendido inmediatamente\n\n"); }
 		if (dolor<=17&& dolor>=15) { printf("Sera atendido en menos de 15 min\n\n"); }
 		if (dolor <= 14 && dolor >= 10) { printf("Sera atendido en menos de 60 min\n\n"); }
 		if (dolor <= 9 && dolor >= 7) { printf("Sera atendido en menos de 120 min\n\n"); }
 		if (dolor <= 6 && dolor >= 4) { printf("Sera atendido en menos de 240 min\n\n"); }
-		if (dolor <= 3 && dolor >= 0) { printf("Su estado, no es urgente, pida cita con el medico\n\n"); }
+		if (dolor <= 3 && dolor >= 0) { printf("Su estado no es urgente, pida cita con el medico\n\n"); }
 
 		printf("Volviendo al inicio\n\n");
 		Sleep(4000);
@@ -135,7 +130,7 @@ void main() {
 	break;
 
 	case 2: printf(" \tEscoja una de las siguientes especialidades:\n\n");
-		printf("   1. Medico de familia\n   2. AlergologÌa\n   3. CardiologÌa\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Informar de un problema\n");
+		printf("   1. Medico de familia\n   2. Alergolog√≠a\n   3. Cardiolog√≠a\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Informar de un problema\n");
 
 		scanf_s("%d", &opcion);
 		getchar();
@@ -156,7 +151,7 @@ void main() {
 		case 4: printf("  Se ha identificado como ESPECIALISTA EN CIRUGIA, ingrese:\n");
 			identificacion();
 			break;
-		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOGÕA, ingrese:\n");
+		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOG√çA, ingrese:\n");
 			identificacion();
 			break;
 		case 6: printf("  Se ha identificado como ESPECIALISTA EN ENDOCRINOLOGIA, ingrese:\n");
@@ -168,8 +163,7 @@ void main() {
 			break;
 
 		case 8: printf("  Se ha identificado como ESPECIALISTA EN GINECOLOGIA, ingrese:\n");
-			identificacion();
-			break;
+			identificacion();			break;
 
 		case 9: printf("  Se ha identificado como ESPECIALISTA EN OFTAALMOLOGIA, ingrese:\n");
 			identificacion();
@@ -212,7 +206,6 @@ void main() {
 			identificacion();
 
 
-
 			time_t result = time(NULL); //imprime la hora
 			char str[26];
 			ctime_s(str, sizeof str, &result);
@@ -224,38 +217,37 @@ void main() {
 			{
 			case 'L':
 
-				printf("\tLas tareas de hoy son limpiar las habitaciones de la primera planta, habitaciones de 101-150\n\n");
+				printf("\tLas tareas de hoy son limpiar la primera planta, habitaciones de 101-150\n\n");
 
 				break;
 
 			case 'M':
 
-				printf("\tLas tareas de hoy son limpiar las habitaciones de la segunda planta, habitaciones de 201-250\n\n");
+				printf("\tLas tareas de hoy son limpiar la segunda planta, habitaciones de 201-250\n\n");
 
 				break;
 
 			case 'X':
 
-				printf("\tLas tareas de hoy son limpiar las habitaciones de la tercera planta, habitaciones de 301-350\n\n");
+				printf("\tLas tareas de hoy son limpiar la tercera planta, habitaciones de 301-350\n\n");
 
 				break;
 
 			case 'J':
 
-				printf("\tLas tareas de hoy son limpiar las habitaciones de la cuarta planta, habitaciones de 401-550\n\n");
+				printf("\tLas tareas de hoy son limpiar la cuarta planta, habitaciones de 401-550\n\n");
 
 				break;
 
 			case 'V':
 
-				printf("\tLas tareas de hoy son limpiar la planta baja y la recepcion\n\n");
+				printf("\tLas tareas de hoy son limpiar la planta baja y recepcion\n\n");
 
 				break;
 
 			case 'S':
 
-				printf("\tLas tareas de hoy son limpiar la cocina y los pasillos generales\n\n");
-
+				printf("\tLas tareas de hoy son limpiar la cocina y pasillos o zonas comunes \n\n");
 				break;
 
 			case 'D':
@@ -267,7 +259,6 @@ void main() {
 			}
 
 			break;
-
 		case 2: printf("  Se ha identificado como PERSONAL DE LAVANDERIA, ingrese:\n");
 			identificacion();
 			break;
@@ -290,13 +281,12 @@ void main() {
 	case 4: printf("  Se ha identificado como PERSONAL DE ADMINISTRACION, ingrese:\n\n");
 		identificacion();
 
-		printf("\n   1. Ver historial de fichages\n   2. Ver registros de pacientes\n\n");
-
+		printf("\n   1. Ver historial de profesionales\n   2. Ver registros de pacientes\n\n");
 		scanf_s("%d", &opcion);
 		getchar();
 
 		switch (opcion) {
-		case 1: printf("  Cargando el historial de fichages\n");
+		case 1: printf("  Cargando el historial de profesionales\n");
 			
 			verregistrosusuarios();
 
@@ -308,9 +298,7 @@ void main() {
 
 			break;
 
-		default:printf("  OPCION NO VALIDA\n\n");
-		
-
+		default:printf("  OPCION NO VALIDA\n\n");	
 		
 		}
 
@@ -338,7 +326,7 @@ void main() {
 
 void identificacion( ) {
 
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int salir=0;
 	int numusers = 0;
 	int i=0;
@@ -355,7 +343,7 @@ void identificacion( ) {
 
 
 	if (error == 0) {
-		printf("Fichero abrierto correctamente\n");
+		printf("Fichero abierto correctamente\n");
 
 
 	}
@@ -374,14 +362,14 @@ void identificacion( ) {
 
 	printf("     Usuario: ");
 	scanf_s("%s",&id.usuario,15); //el getchar no funciona aqui
-	printf("\n     Contrasena: ");
 	getchar();
+	printf("\n     Contrasena: ");
 	gets(id.contrasena);
 
 	for (i = 0; !feof(usuarios); i++) {// hasta final de archivo
 
-		fscanf_s(usuarios, "%s", usuariofichero,15);
-		fscanf_s(usuarios, "%s", contrasenafichero, 15);
+		fscanf_s(usuarios, "%s", usuariofichero,20);
+		fscanf_s(usuarios, "%s", contrasenafichero, 20);
 
 		
 
@@ -588,6 +576,7 @@ void verregistrospacientes() {//imprime los registros de los pacientes
 
 	fopen_s(&pacientes, "registrospacientes.txt", "r");
 
+	//Aqui no hay que comprobar que se abre correctamente??
 	
 	for (i = 0; !feof(pacientes); i++) {
 
@@ -612,6 +601,7 @@ void verregistrosusuarios() {//imprime los registros de los usuarios
 
 	fopen_s(&usuarios, "registrosusuarios.txt", "r");
 
+	//Aqui no hay que comprobar que se abre correctamente??
 
 	while(!feof(usuarios)) {
 	

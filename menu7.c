@@ -520,7 +520,7 @@ void registrarpaciente() {//graba en el fichero los registros de los pacientes
 	letradni = dni % 23;
 
 	printf("\tSu DNI es: %d - %c\n\n", dni, letra[letradni]);
-
+//CAMBIAR R+ A ADD
 	fopen_s(&pacientes, "registrospacientes.txt", "r+");
 
 	time_t result = time(NULL); //imprime la hora

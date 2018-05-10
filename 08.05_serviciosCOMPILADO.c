@@ -1,4 +1,4 @@
-//Habria que comprobar si el usuario y contraseÒa que mete esta bien y si no hay un usuario creado, que se dirija a administracion a crearlo
+//Habria que comprobar si el usuario y contrase√±a que mete esta bien y si no hay un usuario creado, que se dirija a administracion a crearlo
 #include<stdio.h>
 #include <time.h>
 #include <windows.h>
@@ -38,7 +38,7 @@ void mostrar_aviso_administracion();
 
 void main() {
 
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int opcion;
 	int dolor;
 	char sino;
@@ -84,14 +84,14 @@ void main() {
 		registrarpaciente();
 
 		printf("Escoja una de las siguientes especialidades:\n");
-		printf("   1. Medico de familia\n   2. AlergologÌa\n   3. CardiologÌa\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Urgencias\n ");
+		printf("   1. Medico de familia\n   2. Alergolog√≠a\n   3. Cardiolog√≠a\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Urgencias\n ");
 		scanf_s("%d", &opcion);
 
 		switch (opcion)
 		{
 		case 15: printf("  Bienvenido al servicio de urgencias\n");
 
-			printf("\n  Responda el siguiente cuestionario con un numero del 1-10 o S(sÌ) - N(no)\n\n");
+			printf("\n  Responda el siguiente cuestionario con un numero del 1-10 o S(s√≠) - N(no)\n\n");
 			printf("\n  Clasifique su nivel de su dolor 1-10:   ");
 			scanf_s("%d", &dolor);
 
@@ -220,7 +220,7 @@ void main() {
 
 			break;
 
-		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOGÕA, ingrese:\n");
+		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOG√çA, ingrese:\n");
 
 			identificacion();
 
@@ -566,7 +566,7 @@ void main() {
 
 void identificacion() {
 
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int salir = 0;
 	int numusers = 0;
 	int i = 0;

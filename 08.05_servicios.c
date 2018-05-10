@@ -75,7 +75,7 @@ void main() {
 	printf(" \n\n");
 
 	printf(" \tEscoja una de las siguientes opciones para identificarse: \n");	printf(" \n\n");
-	printf(" \t  1. Paciente\n\t  2. Equipo medico\n\t  3. Personal de servicios\n \t  4. Administracion\n \t  5. Informar de un problema/aviso.\n   6. Salir\n\n");
+	printf(" \t  1. Paciente\n\t  2. Equipo medico\n\t  3. Personal de servicios\n \t  4. Administracion\n \t  5. Informar de un problema/aviso.\n\t  6. Salir\n\n");
 	scanf_s("%d", &opcion);
 
 	switch (opcion) {
@@ -190,7 +190,7 @@ void main() {
 
 	case 2: printf(" \tEscoja una de las siguientes especialidades:\n\n");
 
-		printf("   1. Medico de familia\n   2. Alergología\n   3. Cardiología\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Informar de un problema\n");
+		printf("   1. Medico de familia\n   2. Alergologia\n   3. Cardiologia\n   4. Cirugia\n   5. Dermatologia\n   6. Endocrinologia\n   7. Geriatria\n   8. Ginecologia\n   9. Oftalmologia\n   10. Oncologia\n   11.Pediatria\n   12. Psiquiatria\n   13. Rehabilitacion\n   14. Traumatologia\n   15. Informar de un problema\n");
 		scanf_s("%d", &opcion);
 		getchar();
 
@@ -244,7 +244,7 @@ void main() {
 			
 			break;
 
-		case 9: printf("  Se ha identificado como ESPECIALISTA EN OFTAALMOLOGIA, ingrese:\n");
+		case 9: printf("  Se ha identificado como ESPECIALISTA EN OFTALMOLOGIA, ingrese:\n");
 
 			identificacion();
 
@@ -351,9 +351,9 @@ void main() {
 
 			identificacion();
 
-			time_t result = time(NULL); //imprime la hora
+			/*time_t result = time(NULL); //imprime la hora
 			char str[26];
-			ctime_s(str, sizeof str, &result);
+			ctime_s(str, sizeof str, &result);*/
 			printf("\tLa fecha de hoy es:   %s\n", str);
 
 			receptor[30] = "Lavanderia";
@@ -405,9 +405,9 @@ void main() {
 
 			identificacion();
 
-			time_t result = time(NULL); //imprime la hora
+			/*time_t result = time(NULL); //imprime la hora
 			char str[26];
-			ctime_s(str, sizeof str, &result);
+			ctime_s(str, sizeof str, &result);*/
 			printf("\tLa fecha de hoy es:   %s\n", str);
 
 			receptor[30] = "Cocina";
@@ -458,10 +458,10 @@ void main() {
 
 			identificacion();
 
-			time_t result = time(NULL); //imprime la hora
+			/*time_t result = time(NULL); //imprime la hora
 			char str[26];
 			ctime_s(str, sizeof str, &result);
-			printf("\tLa fecha de hoy es:   %s\n", str);
+			printf("\tLa fecha de hoy es:   %s\n", str);*/
 
 			receptor[30] = "Mantenimiento";
 			nombre_fichero[50] = "avisosmantenimiento.txt";
@@ -517,26 +517,26 @@ void main() {
 		}
 		break;
 
-	case 7: printf("Indique a quien debera ir dirigido el aviso:\n    1. Limpieza\n   2. Lavanderia\n   3. Cocina\n   4. Mantenimiento\n\n");
+	case 5: printf("Indique a quien debera ir dirigido el aviso:\n   1. Limpieza\n   2. Lavanderia\n   3. Cocina\n   4. Mantenimiento\n\n");
 		scanf_s("%d", &opcion);
 
 		switch (opcion) {
 		case 1: 
-			receptor[20] = "Limpieza";
-			nombre_fichero[50] = "avisoslimpieza.txt";
+			receptor[9] = "Limpieza";
+			nombre_fichero[19] = "avisoslimpieza.txt";
 
 			break;
 		case 2:
-			receptor[20] = "Lavanderia";
-			nombre_fichero[50] = "avisoslavanderia.txt";
+			receptor[11] = "Lavanderia";
+			nombre_fichero[21] = "avisoslavanderia.txt";
 
 			break;
 		case 3:
-			receptor[20] = "Cocina";
-			nombre_fichero[50] = "avisoscocina.txt";
+			receptor[6] = "Cocina";
+			nombre_fichero[16] = "avisoscocina.txt";
 		case 4:
-			receptor[20] = "Mantenimiento";
-			nombre_fichero[50] = "avisosmantenimiento.txt";
+			receptor[13] = "Mantenimiento";
+			nombre_fichero[23] = "avisosmantenimiento.txt";
 		}
 
 		motivo[300] = pedir_enviar_aviso(receptor, nombre_fichero);
@@ -913,7 +913,7 @@ void crear_paciente() {
 	printf("DNI: ");
 		gets(dni);
 
-	crear_paciente=fopen_s(&crear_paciente,"totalpacientesregistrados.txt", "a"); //Si nolo que podemos hacer es un fichero que contenga todos los historiales de todos los pacientes y busque en el fichero el nombre del paciente y el medico escriba debajo
+	fopen_s(&crear_paciente,"totalpacientesregistrados.txt", "a"); //Si nolo que podemos hacer es un fichero que contenga todos los historiales de todos los pacientes y busque en el fichero el nombre del paciente y el medico escriba debajo
 
 	fprintf(crear_paciente, "%s\n%s\n%s\n%s\n%s\n\n", usuario, contrasena, nombre, apellido, dni); //A la hora de ller el fichero, podemos poner un contador que diga el numero de veces que se ha escrito en el historial y asi saber cuantas lineas hay que pasar paraque el medico vuleva a escribir
 	
@@ -940,7 +940,7 @@ void crear_profesional(){
 	printf("Especialidad/Servicio: ");
 	gets(especialidad);
 
-	crear_profesional = fopen_s(&crear_profesional, "plantillaprofesionales.txt", "a"); //Si nolo que podemos hacer es un fichero que contenga todos los historiales de todos los pacientes y busque en el fichero el nombre del paciente y el medico escriba debajo
+	fopen_s(&crear_profesional, "plantillaprofesionales.txt", "a"); //Si nolo que podemos hacer es un fichero que contenga todos los historiales de todos los pacientes y busque en el fichero el nombre del paciente y el medico escriba debajo
 
 	fprintf(crear_profesional, "%s\n%s\n%s\n%s\n%s\n\n", usuario, contrasena, nombre, apellido, especialidad); //A la hora de ller el fichero, podemos poner un contador que diga el numero de veces que se ha escrito en el historial y asi saber cuantas lineas hay que pasar paraque el medico vuleva a escribir
 
@@ -951,7 +951,7 @@ void pacientes_registrados() {
 	FILE *pacientes;
 	char imprimir[200];
 
-	pacientes=fopen_s(&pacientes, "totalpacientesregistrados.txt", "r");
+	fopen_s(&pacientes, "totalpacientesregistrados.txt", "r");
 
 	//Aqui no hay que comprobar que se abre correctamente??
 
@@ -969,7 +969,7 @@ void profesionales_registrados() {
 	FILE *profesionales;
 	char imprimir[200];
 
-	profesionales = fopen_s(&profesionales, "plantillaprofesionales.txt", "r");
+	fopen_s(&profesionales, "plantillaprofesionales.txt", "r");
 
 	//Aqui no hay que comprobar que se abre correctamente??
 
@@ -988,7 +988,7 @@ void sobreescribir_historial_clinico(char usuario[15], char especialidad[25]) { 
 	int i;
 	char consulta[300];
 
-	pacientes = fopen_s(&pacientes, "totalpacientesregistrados.txt", "a");
+	fopen_s(&pacientes, "totalpacientesregistrados.txt", "a");
 
 	printf("Diagnostico del paciente %s:\n", usuario);
 	gets(consulta);
@@ -1003,7 +1003,7 @@ void sobreescribir_historial_clinico(char usuario[15], char especialidad[25]) { 
 
 }
 
-void consultar_historial_clinico(char usuario[15]) {
+/*void consultar_historial_clinico(char usuario[15]) {
 	FILE *pacientes;
 	int i;
 
@@ -1016,7 +1016,7 @@ void consultar_historial_clinico(char usuario[15]) {
 	printf("\n");
 
 	fclose(pacientes);
-}
+}*/
 
 char pedir_enviar_aviso(char receptor[20], char nombre_fichero[50]) {
 	char motivo[300];
@@ -1025,7 +1025,7 @@ char pedir_enviar_aviso(char receptor[20], char nombre_fichero[50]) {
 	printf("Indique brevemente el motivo de su aviso dirigido a %s\n", receptor);
 	gets(motivo);
 
-	avisos = fopen(&avisos, nombre_fichero , "a");
+	fopen_s(&avisos, nombre_fichero , "a");
 
 	fprintf(avisos, "%s", motivo);
 
@@ -1037,7 +1037,7 @@ char pedir_enviar_aviso(char receptor[20], char nombre_fichero[50]) {
 
 void enviar_aviso_administracion(char receptor[20], char aviso[300]) {
 	FILE *avisos;
-	avisos = fopen(&avisos, "avisosadministracion.txt", "a");
+	fopen_s(&avisos, "avisosadministracion.txt", "a");
 	fprintf(avisos, "%s: %s\n", receptor, aviso);
 
 	fclose(avisos);
@@ -1045,7 +1045,7 @@ void enviar_aviso_administracion(char receptor[20], char aviso[300]) {
 
 void mostrar_aviso(char servicio[20], char nombre_fichero[25]) { //Este borra el aviso una vez que ya ha salido, no imprime los avisos anteriores
 	FILE *avisos;
-	avisos = fopen(&avisos, nombre_fichero, "r");
+	fopen_s(&avisos, nombre_fichero, "r");
 	char imprimir[300];
 
 	while (!feof(avisos)) {
@@ -1057,14 +1057,14 @@ void mostrar_aviso(char servicio[20], char nombre_fichero[25]) { //Este borra el
 
 	fclose(avisos);
 
-	avisos = fopen(&avisos, nombre_fichero, "w");// Esto sirve para eliminar el aviso una vez visto
-	fprintf("\n");
+	fopen_s(&avisos, nombre_fichero, "w");// Esto sirve para eliminar el aviso una vez visto
+	fprintf(avisos, "\n");
 	fclose(avisos);
 }
 
 void mostrar_aviso_administracion() { //Este no borra el aviso, es como si tuviera memoria
 	FILE *avisos;
-	avisos = fopen(&avisos, "avisosadministracion.txt", "r");
+	fopen_s(&avisos, "avisosadministracion.txt", "r");
 	char imprimir[300];
 	
 	while (!feof(avisos)) {

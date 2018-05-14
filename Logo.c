@@ -52,7 +52,7 @@ void logo() {
 		SetFontSize(hConsole, size);
 	}
 
-	//TAMAÑO 14 5-ESPACIOS || TAMAÑO 15 4-ESPACIOS
+	//TAMAÃ‘O 14 5-ESPACIOS || TAMAÃ‘O 15 4-ESPACIOS
 
 	SetConsoleTextAttribute(hConsole, 240);		//LETRAS NEGRAS EN FONDO BLANCO
 	printf("     HOSPITAL       \n");
@@ -77,7 +77,7 @@ void logo() {
 	system("cls");
 }
 
-//																					VOID MAIN
+//											VOID MAIN
 void main() {
 
 	AltEnter();

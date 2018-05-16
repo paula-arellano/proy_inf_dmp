@@ -47,22 +47,22 @@ void logo() {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD size;
 	if (GetFontSize(hConsole, &size)) {
-		size.X += (SHORT)(size.X * 14);
-		size.Y += (SHORT)(size.Y * 14);
+		size.X += (SHORT)(size.X * 15);
+		size.Y += (SHORT)(size.Y * 15);
 		SetFontSize(hConsole, size);
 	}
 
 	//TAMAÑO 14 5-ESPACIOS || TAMAÑO 15 4-ESPACIOS
 
 	SetConsoleTextAttribute(hConsole, 240);		//LETRAS NEGRAS EN FONDO BLANCO
-	printf("     HOSPITAL       \n");
+	printf("    HOSPITAL       \n");
 	
 	//SetConsoleTextAttribute(hConsole, 252);		BLANCO
 	//SetConsoleTextAttribute(hConsole, 204);		ROJO
 
-	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("   ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
-	SetConsoleTextAttribute(hConsole, 252); printf("     ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("       ");	/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
-	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("   ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 252); printf("     ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("      ");	/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
 
 	SetConsoleTextAttribute(hConsole, 255);
 	system("PAUSE");

@@ -20,8 +20,8 @@ void logo();
 void AltEnter();// pone en pantalla completa
 char fecha();
 
-
-
+int GetFontSize(HANDLE windowHandle, COORD *size);
+int SetFontSize(HANDLE windowHandle, COORD size);
 int registrarpaciente();
 void verregistrospacientes();
 void registrarusuario(char usuario[100]);
@@ -58,7 +58,7 @@ void main() {
 
 	AltEnter();
 
-	logo();
+	//logo();
 
 	Sleep(3000);
 
@@ -99,72 +99,72 @@ void main() {
 		{
 		case 1:
 			dni = registrarpaciente();
-			char medico[30] = "medicofamilia";
+			char medico[] = "Medicofamilia";
 			cita_paciente(dni, medico);
 			break;
 		case 2:
 			dni = registrarpaciente();
-			char alergologia[30] = "alergologia";
+			char alergologia[] = "Alergologia";
 			cita_paciente(dni, alergologia);
 			break;
 		case 3:
 			dni = registrarpaciente();
-			char cardiologia[30] = "cardiologia";
+			char cardiologia[] = "Cardiologia";
 			cita_paciente(dni, cardiologia);
 			break;
 		case 4:
 			dni = registrarpaciente();
-			char cirugia[30] = "cirugia";
+			char cirugia[] = "Cirugia";
 			cita_paciente(dni, cirugia);
 			break;
 		case 5:
 			dni = registrarpaciente();
-			char dermatologia[30] = "dermatologia";
+			char dermatologia[] = "Dermatologia";
 			cita_paciente(dni, dermatologia);
 			break;
 		case 6:
 			dni = registrarpaciente();
-			char endocrinologia[30] = "endocrinologia";
+			char endocrinologia[] = "Endocrinologia";
 			cita_paciente(dni, endocrinologia);
 			break;
 		case 7:
 			dni = registrarpaciente();
-			char geriatria[30] = "geriatria";
+			char geriatria[] = "Geriatria";
 			cita_paciente(dni, geriatria);
 			break;
 		case 8:
 			dni = registrarpaciente();
-			char ginecologia[30] = "ginecologia";
+			char ginecologia[] = "Ginecologia";
 			cita_paciente(dni, ginecologia);
 			break;
 		case 9:
 			dni = registrarpaciente();
-			char oftalmologia[30] = "oftalmologia";
+			char oftalmologia[] = "Oftalmologia";
 			cita_paciente(dni, oftalmologia);
 			break;
 		case 10:
 			dni = registrarpaciente();
-			char oncologia[30] = "oncologia";
+			char oncologia[] = "Oncologia";
 			cita_paciente(dni, oncologia);
 			break;
 		case 11:
 			dni = registrarpaciente();
-			char pediatria[30] = "pediatria";
+			char pediatria[] = "Pediatria";
 			cita_paciente(dni, pediatria);
 			break;
 		case 12:
 			dni = registrarpaciente();
-			char psiquiatria[30] = "psiquiatria";
+			char psiquiatria[] = "Psiquiatria";
 			cita_paciente(dni, psiquiatria);
 			break;
 		case 13:
 			dni = registrarpaciente();
-			char rehabilitacion[30] = "rehabilitacion";
+			char rehabilitacion[] = "Rehabilitacion";
 			cita_paciente(dni, rehabilitacion);
 			break;
 		case 14:
 			dni = registrarpaciente();
-			char traumatologia[30] = "traumatologia";
+			char traumatologia[] = "Traumatologia";
 			cita_paciente(dni, traumatologia);
 			break;
 
@@ -279,8 +279,10 @@ void main() {
 
 			identificacion();
 
-			printf("Introduzca el dni del paciente: ");
+			printf("Introduzca el dni del paciente sin letra: ");
 			scanf_s("%d", &dni);
+			char medico[] = "medicofamilia";
+			consulta_medico(dni, medico);
 
 			break;
 
@@ -288,11 +290,21 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char alergologia[] = "alergologia";
+			consulta_medico(dni, alergologia);
+
 			break;
 
 		case 3: printf("  Se ha identificado como ESPECIALISTA EN CARDIOLOGIA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char cardiologia[] = "cardiologia";
+			consulta_medico(dni, cardiologia);
 
 			break;
 
@@ -300,11 +312,21 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char cirugia[] = "cirugia";
+			consulta_medico(dni, cirugia);
+
 			break;
 
 		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOGÍA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char dermatologia[] = "dermatologia";
+			consulta_medico(dni, dermatologia);
 
 			break;
 
@@ -312,11 +334,21 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char endocrinologia[] = "endocrinologia";
+			consulta_medico(dni, endocrinologia);
+
 			break;
 
 		case 7: printf("  Se ha identificado como ESPECIALISTA EN GERIATRIA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char geriatria[] = "geriatria";
+			consulta_medico(dni, geriatria);
 
 			break;
 
@@ -324,11 +356,21 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char ginecologia[] = "ginecologia";
+			consulta_medico(dni, ginecologia);
+
 			break;
 
 		case 9: printf("  Se ha identificado como ESPECIALISTA EN OFTALMOLOGIA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char oftalmologia[] = "oftalmologia";
+			consulta_medico(dni, oftalmologia);
 
 			break;
 
@@ -336,11 +378,21 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char oncologia[] = "oncologia";
+			consulta_medico(dni, oncologia);
+
 			break;
 
 		case 11: printf("  Se ha identificado como ESPECIALISTA EN PEDIATRIA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char pediatria[] = "pediatria";
+			consulta_medico(dni, pediatria);
 
 			break;
 
@@ -348,17 +400,32 @@ void main() {
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char psiquiatria[] = "psiquiatria";
+			consulta_medico(dni, psiquiatria);
+
 			break;
 
 		case 13: printf("  Se ha identificado como ESPECIALISTA EN REHABILITACION, ingrese:\n");
 
 			identificacion();
 
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char rehabilitacion[30] = "rehabilitacion";
+			consulta_medico(dni, rehabilitacion);
+
 			break;
 
 		case 14: printf("  Se ha identificado como ESPECIALISTA EN TRAUMATOLOGIA, ingrese:\n");
 
 			identificacion();
+
+			printf("Introduzca el dni del paciente sin letra: ");
+			scanf_s("%d", &dni);
+			char traumatologia[30] = "traumatologia";
+			consulta_medico(dni, traumatologia);
 
 			break;
 
@@ -634,6 +701,7 @@ void identificacion() {
 	int i = 0;
 	char usuariofichero[20], contrasenafichero[20];
 	char *usuario[15];
+	char basura[20];
 	FILE *usuarios;
 
 	errno_t error;
@@ -665,6 +733,7 @@ void identificacion() {
 
 			fscanf_s(usuarios, "%s", usuariofichero, 20);
 			fscanf_s(usuarios, "%s", contrasenafichero, 20);
+			fscanf_s(usuarios, "%s", basura, 20);
 
 
 			if (strcmp(id.usuario, usuariofichero) == 0 && strcmp(id.contrasena, contrasenafichero) == 0) {
@@ -743,7 +812,7 @@ void identificacion_servicios() {
 
 				fclose(usuarios);
 
-				salir = 1;
+				salir = 11;
 
 				break;
 			}
@@ -758,85 +827,81 @@ void identificacion_servicios() {
 	return 0;
 }
 
+int GetFontSize(HANDLE windowHandle, COORD *size){
 
-void logo() {//logotipo
+	CONSOLE_FONT_INFOEX font = { sizeof(CONSOLE_FONT_INFOEX) };
 
-	system("color 0A");
+	if (!GetCurrentConsoleFontEx(windowHandle, 0, &font))
+		return 0;
 
-	printf("\n");
+	*size = font.dwFontSize;
 
-	printf("\n");
-
-	printf(" 8888888888b d88888888888b d888    d88b d88888888888b  888888888888b      _d88888888b__   \n");
-
-	printf("88888888888P 888888888888P 88888  _8888 Y88888888888P  8888888888888b    d8888888888888b\n");
-
-	printf("8888         8888_______   888888  8888      8888      888 ____d88888    88888P    88888\n");
-
-	printf("8888         88888888888b  888888888888      8888      8888888888888P    8888       Y888\n");
-
-	printf("8888         88888888888P  8888bY888888      8888      888888888888      8888        888\n");
-
-	printf("8888b______  8888          Y8888  88888      8888      8888  Y88888b     8888b_  ___d888\n");
-
-	printf("Y8888888888b Y88888888888   8888   8888      8888      8888    Y8888b     88888bd8888888\n");
-
-	printf("Y888888888P   Y888888888P   Y88P   Y88P      Y88P      Y88P     Y888P      8888888888\n");
-
-	printf("\n");
-
-	printf("_____      ___________\n");
-
-	printf("d88888b_    d88888888888b\n");
-
-	printf("88888888b   Y888888888888\n");
-
-	printf("888888888b  8888____\n");
-
-	printf("8888 Y8888  888888888b\n");
-
-	printf("8888  8888  888888888P\n");
-
-	printf("8888 d8888  8888    \n");
-
-	printf("8888d8888P  8888___\n");
-
-	printf("88888888P   88888888888\n");
-
-	printf("Y888888P    Y888888888P\n");
-
-	printf("\n");
-
-	printf("\n");
-
-	printf("   _______        _____       __          __        __     ______\n");
-
-	printf(" _d8888888b     _d88888      d88b        d88b      d88b   d888888b_\n");
-
-	printf("d888888888P    d88888888     8888        8888      8888   888888888b_\n");
-
-	printf("88888_         8888P 8888    8888        8888      8888   8888  88888b\n");
-
-	printf("888888b        8888__8888    8888        8888      8888   8888   88888b\n");
-
-	printf("Y8888888888b  d8888888888b   8888        8888     d8888   8888    Y8888\n");
-
-	printf("     8PY8888b 888888888888   8888        8888b    8888P   8888     8888\n");
-
-	printf(" _______ 8888 88888    888b  8888_______ Y8888_  d8888    8888__  d8888\n");
-
-	printf("d888888888888 88888    8888  88888888888b 88888bd8888P    888888bd8888\n");
-
-	printf("Y88888888888P Y888P    Y88P  88888888888P Y888888888       8888888888\n");
-
-	printf("\n");
-
-	printf("\n");
-
-	return 0;
+	return 1;
 }
 
 
+
+int SetFontSize(HANDLE windowHandle, COORD size){
+
+	CONSOLE_FONT_INFOEX font = { sizeof(CONSOLE_FONT_INFOEX) };
+
+	if (!GetCurrentConsoleFontEx(windowHandle, 0, &font))
+		return 0;
+
+	font.dwFontSize = size;
+
+	if (!SetCurrentConsoleFontEx(windowHandle, 0, &font))
+		return 0;
+
+	return 1;
+
+}
+
+
+void logo() {
+
+	system("COLOR 70");
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD size;
+
+	if (GetFontSize(hConsole, &size)) {
+
+		size.X += (SHORT)(size.X * 15);
+
+		size.Y += (SHORT)(size.Y * 15);
+
+		SetFontSize(hConsole, size);
+
+	}
+	//TAMAÑO 14 5-ESPACIOS || TAMAÑO 15 4-ESPACIOS
+
+	SetConsoleTextAttribute(hConsole, 240);		//LETRAS NEGRAS EN FONDO BLANCO
+
+	printf("    HOSPITAL       \n");
+
+	//SetConsoleTextAttribute(hConsole, 252);		BLANCO
+
+	//SetConsoleTextAttribute(hConsole, 204);		ROJO
+
+	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 252); printf("     ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("      ");	/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
+	SetConsoleTextAttribute(hConsole, 255);
+
+	system("PAUSE");
+
+	if (GetFontSize(hConsole, &size)) {
+
+		size.X = (SHORT)(size.X * 0.085);
+		size.Y = (SHORT)(size.Y * 0.085);
+		SetFontSize(hConsole, size);
+	}
+
+	system("color 07");
+
+	system("cls");
+
+}
 
 void AltEnter(){ //Abrir pantalla completa
 
@@ -1226,27 +1291,33 @@ void consulta_medico(int dni, char especialidad[30]) {
 	sprintf_s(dnic, 9, "%d", dni);
 	strcat_s(dnic, 13, txt);
 
-	error = fopen_s(&pf, dnic, "a");
-
+	error = fopen_s(&pf, dnic, "r");
 	if (error == 0) {
+		printf("Bienvenido al hospital.\n");
+		
+	}
+
+	else {
+		printf("No existe ningun usuario con ese DNI.\n\tAcuda a administracion para registrarse.\n");
+		fclose(pf);
+		return 0;
+	}
 
 		while (!feof(pf)) {
-			fgets(imprimir, 200, pf);
+			fgets(imprimir, 300, pf);
 			printf("%s", imprimir);
 		}
 		printf("\n");
 
-	}
+	fclose(pf);
 
-	else {
-		printf("No existe ningun usuario con ese DNI.\n\n");
-		return 0;
-	}
+	error = fopen_s(&pf, dnic, "a");
 
-	printf("Consulta %s: \n", especialidad);
+	printf("Consulta %s (indique brevemente los sintomas del paciente): \n", especialidad);
+	getchar();
 	gets(consulta);
 
-	fprintf("%s: %s", especialidad, consulta);
+	fprintf(pf,"%s: %s", especialidad, consulta);
 
 	fclose(pf);
 }

@@ -42,7 +42,7 @@ void mostrar_aviso_administracion();
 
 void main() {
 	struct paciente nuevo_registro;
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int opcion;
 	int dolor;
 	char sino;
@@ -170,7 +170,7 @@ void main() {
 
 		case 15: printf("  Bienvenido al servicio de urgencias\n");
 
-			printf("\n  Responda el siguiente cuestionario con un numero del 1-10 o S(sÌ) - N(no)\n\n");
+			printf("\n  Responda el siguiente cuestionario con un numero del 1-10 o S(s√≠) - N(no)\n\n");
 			printf("\n  Clasifique su nivel de su dolor 1-10:   ");
 			scanf_s("%d", &dolor);
 
@@ -319,7 +319,7 @@ void main() {
 
 			break;
 
-		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOGÕA, ingrese:\n");
+		case 5: printf("  Se ha identificado como ESPECIALISTA EN DERMATOLOG√çA, ingrese:\n");
 
 			identificacion();
 
@@ -695,7 +695,7 @@ void main() {
 
 void identificacion() {
 
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int salir = 0;
 	int numusers = 0;
 	int i = 0;
@@ -764,7 +764,7 @@ void identificacion() {
 
 void identificacion_servicios() {
 
-	struct perfil id;  //Estructura para almacenar el usuario y contraseÒa ingresados.
+	struct perfil id;  //Estructura para almacenar el usuario y contrase√±a ingresados.
 	int salir = 0;
 	int numusers = 0;
 	int i = 0;
@@ -827,80 +827,54 @@ void identificacion_servicios() {
 	return 0;
 }
 
-int GetFontSize(HANDLE windowHandle, COORD *size){
-
-	CONSOLE_FONT_INFOEX font = { sizeof(CONSOLE_FONT_INFOEX) };
-
-	if (!GetCurrentConsoleFontEx(windowHandle, 0, &font))
-		return 0;
-
-	*size = font.dwFontSize;
-
-	return 1;
-}
-
-
-
-int SetFontSize(HANDLE windowHandle, COORD size){
-
-	CONSOLE_FONT_INFOEX font = { sizeof(CONSOLE_FONT_INFOEX) };
-
-	if (!GetCurrentConsoleFontEx(windowHandle, 0, &font))
-		return 0;
-
-	font.dwFontSize = size;
-
-	if (!SetCurrentConsoleFontEx(windowHandle, 0, &font))
-		return 0;
-
-	return 1;
-
-}
-
-
 void logo() {
 
-	system("COLOR 70");
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD size;
+	printf("        ,,,,,   ,,,,,      ,,,,,,        ,,,,,,     ,,,,,,,,,    ,,,,,  ,,,,,,,,,,,,,     ,,,,,      ,,,,,\n");
+	printf("        MMMMF   JMMMM   ,aMMMMMMMMb,   JMMMM@MMMW,  MMMMMMMMMMb  JMMMM  MMMMMMMMMMMMF    JMMMMM      JMMMM\n");
+	printf("        MMMMF   JMMMM  JMMMMM99NMMMM, JMMMM` 9MMMM  MMMMP!?NMMMF JMMMM  @@@@MMMMM@@@E   JMMMMMMI     JMMMM\n");
+	printf("        MMMMWmmmdMMMM  MMMMP    YMMMW JMMMMMMmJ,    MMMMF  JMMMF JMMMM      MMMMF       MMMMJMMMJ    JMMMM\n");
+	printf("        MMMMMMMMMMMMM  MMMMF    JMMMM  J@MMMMMMMMp  MMMMMMMMMMM+ JMMMM      MMMMF      JMMME,MMMM    JMMMM\n");
+	printf("        MMMMP!!!YMMMM  MMMMF    JMMMM   ,,,7?@MMMML MMMMM@@@9!   JMMMM      MMMMF     JMMMMJJdMMMF   JMMMM\n");
+	printf("        MMMMF   JMMMM  JMMMMp,,JMMMMW JMMMh, ,MMMME MMMMF        JMMMM      MMMMF     MMMMMMMMMMMMJ  JMMMMJJJJJJ\n");
+	printf("        MMMMF   JMMMM   JNMMMMMMMMMW   @MMMMMMMMME  MMMMF        JMMMM      MMMMF    JMMMP^^^^JMMMM  JMMMMMMMMMMF\n");
+	printf("        99999   J9999     ?9@@99`      Q?9@@@9!     MMMMF        JMMMM      MMMMF    9999+     99999 J9999999999T\n");
+	printf(" \n\n\n");
+	SetConsoleTextAttribute(hConsole, 12);
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n"),
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   JMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n");
+	printf("                                   J@@@@@@@@@@@@@@@@NMMMMMMMMMMMMMMM@@@@@@@@@@@@@@@@@\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    JMMMMMMMMMMMMMMM\n");
+	printf("                                                    J@@@@@@@@@@@@@@9\n\n\n\n");
 
-	if (GetFontSize(hConsole, &size)) {
-
-		size.X += (SHORT)(size.X * 15);
-
-		size.Y += (SHORT)(size.Y * 15);
-
-		SetFontSize(hConsole, size);
-
-	}
-	//TAMA—O 14 5-ESPACIOS || TAMA—O 15 4-ESPACIOS
-
-	SetConsoleTextAttribute(hConsole, 240);		//LETRAS NEGRAS EN FONDO BLANCO
-
-	printf("    HOSPITAL       \n");
-
-	//SetConsoleTextAttribute(hConsole, 252);		BLANCO
-
-	//SetConsoleTextAttribute(hConsole, 204);		ROJO
-
-	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
-	SetConsoleTextAttribute(hConsole, 252); printf("     ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("      ");	/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
-	SetConsoleTextAttribute(hConsole, 252); printf("       ");	/* ROJO */	 SetConsoleTextAttribute(hConsole, 204); printf("  ");		/*ROJO*/	SetConsoleTextAttribute(hConsole, 252); printf("        \n");
-	SetConsoleTextAttribute(hConsole, 255);
-
+	SetConsoleTextAttribute(hConsole, 15);
 	system("PAUSE");
-
-	if (GetFontSize(hConsole, &size)) {
-
-		size.X = (SHORT)(size.X * 0.085);
-		size.Y = (SHORT)(size.Y * 0.085);
-		SetFontSize(hConsole, size);
-	}
-
-	system("color 07");
-
 	system("cls");
-
+	system("color 07");
 }
 
 void AltEnter(){ //Abrir pantalla completa

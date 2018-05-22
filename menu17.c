@@ -111,7 +111,7 @@ void registrarusuario(char usuario[100]);
 
 void verregistrosusuarios();
 
-void crear_paciente(struct paciente* registro);
+int crear_paciente(struct paciente* registro);
 
 void pacientes_registrados();
 
@@ -163,7 +163,7 @@ void main() {
 
 	int dni, contrasena;
 
-	int i;
+	int i, error;
 
 	int identificacion;
 
@@ -1341,7 +1341,11 @@ void main() {
 
 		case 3:
 
-			crear_paciente(&nuevo_registro);
+			error= crear_paciente(&nuevo_registro);
+
+			if ( error == 0) {
+				goto inicio;
+			}
 
 			break;
 
@@ -1349,9 +1353,10 @@ void main() {
 
 		case 4:
 
-			printf("\n\n\tIngrese el DNI del paciente: ");
-
-			scanf_s("%d", &dni);
+			dni = dni_comprobacion();
+			if (dni == 0) {
+				goto inicio;
+			}
 
 			consultar_historial_clinico(dni);
 
@@ -2335,7 +2340,7 @@ void verregistrosusuarios() {//imprime los registros de los usuarios
 
 
 
-void crear_paciente(struct paciente* registro) {//crea un archivo con el nombre dni.txt
+int crear_paciente(struct paciente* registro) {//crea un archivo con el nombre dni.txt
 
 
 
@@ -2359,23 +2364,18 @@ void crear_paciente(struct paciente* registro) {//crea un archivo con el nombre 
 
 	gets(registro->apellido);
 
-	printf("\n\n\tDNI ( sin letra ): ");
 
+	registro->dni = dni_comprobacion();
 
-
-
+	if (registro->dni == 0) {
+		return 0;
+	}
 
 	char letra[23] = "TRWAGMYFPDXBNJZSQVHLCKE";
 
 	int letradni;
 
 	fflush(stdin);
-
-	int dni;
-
-	scanf_s("%d", &registro->dni);
-
-
 
 	letradni = registro->dni % 23;
 
@@ -2423,6 +2423,8 @@ void crear_paciente(struct paciente* registro) {//crea un archivo con el nombre 
 		printf("\n\t Paciente registrado correctamente\n\n\t");
 
 	}
+
+	return 1;
 
 }
 
@@ -3278,9 +3280,7 @@ void menu_medico(medico* p) {
 
 	case 2: printf("\tConsulta medica: \n");
 
-		printf("\t\tIntroduzca el dni del paciente sin letra: ");
-
-		scanf_s("%d", &dni);
+		dni = dni_comprobacion();
 
 		consulta_medico(dni, p); //Funciones que llaman a funciones
 
@@ -3582,17 +3582,25 @@ int dni_comprobacion() {
 	int i = 0, error;
 	int j = 0;
 	int dni;
-	char cadena[15];
+	char cadena[20];
+	int len;
 	
 	for (i=0;i<3;i++){
 		printf("\n\n\tIntroduzca el DNI sin la letra: ");
 		scanf_s("%d", &dni);
 		gets(cadena);
 
+		len = strlen(cadena);
+
 		error = 0;
 
+		if (len != 8) {
+			error = 1;
+			continue;
+		}		
+
 		while (cadena[j] != '\0') {
-			if ((cadena[j] < 48) || (cadena[j] > 57) || (j > 7)) {
+			if ((cadena[j] < 48) || (cadena[j] > 57)){
 				error = 1;
 				break;
 			}
